@@ -6,5 +6,5 @@ if [[ ! -z $(git status -s) ]]; then
 fi
 
 hugo
-cd public && git add --all && git commit -m "Publishing $(git rev-parse --short HEAD) to gh-pages" && cd ..
+cd public && git add --all && git commit -m "Publishing $(git rev-parse --short HEAD) to master" && cd ..
 git push origin master
