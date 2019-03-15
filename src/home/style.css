@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #111133;
+}
+
+
+header {
+  font-size: 1.7rem;
+  text-align: center;
+  h1 {
+    margin: 1rem;
+  }
+}
+
+#muh_face {
+  border-radius: 50%;
+  border: 2px solid black;
+  display: block;
+
+  @media (max-width: 576px) {
+    margin: 0 auto;
+  }
+}
+
+#about {
+  text-align: center;
+
+  @media (min-width: 576px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2 {
+    margin: 0;
+    display: inline-block;
+  }
+}
+
+
+#facts {
+  position: relative;
+  display: inline-block;
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: linear-gradient(rgba(255, 255, 255, 255), rgba(255, 255, 255, 0), rgba(255, 255, 255, 255));
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background: white;
+  font-size: 0.8rem;
+  height: 1.5rem;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle
+}

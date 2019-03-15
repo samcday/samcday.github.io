@@ -1,58 +1,36 @@
-<!DOCTYPE HTML>
-<!--
-	Identity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+{{ $style := resources.Get "home.css" }}
+{{ $script := resources.Get "home.js" }}
+
+<!doctype html>
 <html>
-	<head>
-		<title>samcday.com</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
-	</head>
-	<body class="is-loading">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sam I Am. Am I Sam? I Am Sam. something about green eggs and...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+  </head>
+  <body>
+    <script src="{{ $script.Permalink }}"></script>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <header>
+      <h1><noscript>Hey.</noscript><script>greeting();</script></h1>
+    </header>
 
-				<!-- Main -->
-					<section id="main">
-						<header>
-							<span class="avatar"><img src="https://www.gravatar.com/avatar/8dae60b28cd51f8fd5001ff42e798e06?s=120" alt="" /></span>
-							<h1>Sam Day</h1>
-							<p>Software Engineer • Berlin, DE</p>
-						</header>
+    <section id="about">
+      <img id="muh_face" src="https://www.gravatar.com/avatar/8dae60b28cd51f8fd5001ff42e798e06?s=200" />
+      <h2>I'm Sam, and I...</h2>
+      <div id="facts">
+        <div class="overlay"></div>
+        ... am a human.<br/>
+        ... have completed 29 trips around the sun.<br/>
+        ... like eating bacon, sometimes.
+      </div>
+    </section>
 
-						<footer>
-							<ul class="icons">
-								<li><a href="https://github.com/samcday" target="_blank" class="fa-github">Github</a></li>
-								<li><a href="https://www.linkedin.com/in/samcday/" target="_blank" class="fa-linkedin">LinkedIn</a></li>
-							</ul>
-						</footer>
-					</section>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; Sam Day</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<!--[if lte IE 8]><script src="js/respond.min.js"></script><![endif]-->
-			<script>
-				if ('addEventListener' in window) {
-					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
-					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-				}
-			</script>
-
-	</body>
+    <footer>
+      <a href="https://www.github.com/samcday" target="_blank">Codez</a> |
+      <!--<a href="https://samcday.com/blog">Words</a> |-->
+      <a href="https://www.linkedin.com/in/samcday/" target="_blank">Recruiter spam</a>
+    </footer>
+  </body>
 </html>
