@@ -7,19 +7,52 @@ body {
   color: #111133;
 }
 
+a {
+  color: #113f67;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 header {
   font-size: 1.7rem;
   text-align: center;
+
   h1 {
     margin: 1rem;
+    position: relative;
+
+    :after {
+      content: "lol";
+      color: black;
+    }
   }
 }
 
-#muh_face {
-  border-radius: 50%;
-  border: 2px solid black;
-  display: block;
+#page {
+  height: calc(100vh - 1.5rem);
+
+  @media (max-width: 576px) {
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+#me {
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+
+  h2 {
+
+  }
 
   @media (max-width: 576px) {
     margin: 0 auto;
@@ -36,33 +69,65 @@ header {
   }
 
   h2 {
-    margin: 0;
+    font-size: 1.5rem;
+    height: 2rem;
+    line-height: 2rem;
+    margin: 0.5rem 1.5rem;
     display: inline-block;
+    vertical-align: text-bottom;
   }
 }
 
-
-#facts {
+#facts_container {
   position: relative;
+  min-width: 400px;
   display: inline-block;
+  text-align: left;
+  height: 6rem;
+  margin: 1rem 0;
 
-  .overlay {
+  :before {
+    content  : "";
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
-    top: 0;
-    background: linear-gradient(rgba(255, 255, 255, 255), rgba(255, 255, 255, 0), rgba(255, 255, 255, 255));
+    top: -1rem;
+    height: 3rem;
+    pointer-events: none;
+    background: linear-gradient( 
+                    rgba(255,255,255, 255),
+                    rgba(255,255,255, 0));
+  }
+
+  :after {
+    content  : "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1rem;
+    height: 3rem;
+    pointer-events: none;
+    background: linear-gradient( 
+                    rgba(255,255,255, 0), 
+                    rgba(255,255,255, 255));
+  }
+}
+
+#facts {
+  position: absolute;
+  .item {
+    display: block;
+    min-height: 2rem;
+    margin: 0.5rem 0;
   }
 }
 
 footer {
   position: fixed;
   bottom: 0;
-  background: white;
   font-size: 0.8rem;
   height: 1.5rem;
   width: 100%;
   text-align: center;
-  vertical-align: middle
+  vertical-align: middle;
 }
