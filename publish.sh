@@ -1,4 +1,6 @@
-#!/bin/bash -ue -o pipefail
+#!/bin/bash
+
+set -ue -o pipefail
 
 if [[ ! -z $(git status -s) ]]; then
   echo "Tree is dirty. Make sure everything is committed first."
