@@ -18,119 +18,31 @@ header {
 }
 
 header h1 {
-    margin: 1rem;
-    position: relative;
+    margin: 0;
   }
 
-header h1 :after {
-      content: "lol";
-      color: black;
-    }
-
 #page {
-  height: calc(100vh - 1.5rem)
+  height: calc(100vh - 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 576px) {
-
-#page {
-    margin-top: 3rem
-}
-  }
-
-@media (min-width: 576px) {
-
-#page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center
-}
+#muh_face img {
+    border-radius: 50%;
+    border: 2px solid black;
+    display: block;
+    margin: 1rem auto;
   }
 
 #me {
   text-align: center;
+  min-height: 5rem;
+  margin: 0 2rem;
 }
-
-#me img {
-    border-radius: 50%;
-    border: 2px solid black;
-  }
 
 #me h2 {
-
-  }
-
-@media (max-width: 576px) {
-
-#me {
-    margin: 0 auto
-}
-  }
-
-#about {
-  text-align: center
-}
-
-@media (min-width: 576px) {
-
-#about {
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-  }
-
-#about h2 {
-    font-size: 1.5rem;
-    height: 2rem;
-    line-height: 2rem;
-    margin: 0.5rem 1.5rem;
-    display: inline-block;
-    vertical-align: text-bottom;
-  }
-
-#facts_container {
-  position: relative;
-  min-width: 400px;
-  display: inline-block;
-  text-align: left;
-  height: 6rem;
-  margin: 1rem 0;
-}
-
-#facts_container :before {
-    content  : "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -1rem;
-    height: 3rem;
-    pointer-events: none;
-    background: linear-gradient( 
-                    rgba(255,255,255, 255),
-                    rgba(255,255,255, 0));
-  }
-
-#facts_container :after {
-    content  : "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1rem;
-    height: 3rem;
-    pointer-events: none;
-    background: linear-gradient( 
-                    rgba(255,255,255, 0), 
-                    rgba(255,255,255, 255));
-  }
-
-#facts {
-  position: absolute;
-}
-
-#facts .item {
-    display: block;
-    min-height: 2rem;
     margin: 0.5rem 0;
   }
 
@@ -143,4 +55,79 @@ footer {
   text-align: center;
   vertical-align: middle;
 }
+
+
+#loading-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+
+}
+
+
+#loading-overlay .spinner {
+    width: 40px;
+    height: 40px;
+
+    position: relative;
+  }
+
+
+#loading-overlay .double-bounce1, #loading-overlay .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+
+
+#loading-overlay .double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+
+
+@keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+
+.js-loading #page, .js-loading footer {
+    visibility: hidden;
+  }
 
