@@ -5,10 +5,6 @@
     <link>https://samcday.com/</link>
     <description>Recent content on samcday.com</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://samcday.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://samcday.com/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
